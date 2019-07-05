@@ -1,0 +1,105 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>authors</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>
+    <link rel="stylesheet" href="{% static 'css/demo.css' %}">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+
+  
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-5 d-flex align-items-center">
+     <h1>Seaching Patient Database Made Easy</h1>
+    </div>
+    <div class="col-md-6 offset-md-1">
+
+
+<form action="/patients/" method="post" novalidate="true" class="mt-4 mt-md-0">
+    <p class="errorlist">
+        {{msg}}
+    </p>
+
+    {% csrf_token %}
+    
+            {% for field in form %}
+            <div class="fieldWrapper form-group" >
+                {{ field.errors }}
+                {{ field.label_tag }} {{ field }}
+                {% if field.help_text %}
+                <p class="help">{{ field.help_text|safe }}</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+    <button type="submit"  name='action' value="search"  class="btn btn-success"><i class="fa fa-binoculars" aria-hidden="true"></i>  Search</button>
+    <button type="submit" name='action' value="create" class="btn btn-outline-success"><i class="fa fa-download" aria-hidden="true"></i>  New Patient</button>
+ 
+
+
+     
+      </form>
+    </div>
+  </div>
+</div>
+
+<hr class="errorlist">
+
+{% if num_patient > 1 %}
+{% for patient in patients %}
+<p class="errorlist">
+        <a href="/patient/{{patient.chart_id}}/">ID:{{patient.chart_id}}, &nbsp Name:{{patient.name}}, &nbsp Age:{{patient.age}}</a> 
+</p>
+
+{% endfor %}
+{% endif %}
+
+
+
+
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js'></script>
+
+  
+
+  <script type="text/javascript" src="{% static 'js/demo.js' %}" async></script>
+
+
+
+
+</body>
+
+</html>
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+
+
+</head>
+<body>
+<div class="container">
+<h3>Bootstrap 4 button with icon</h3>
+
+
+
+</div>
+</body>
+</html>
+
+ -->

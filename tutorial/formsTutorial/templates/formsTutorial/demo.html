@@ -1,0 +1,72 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Sliding labels for Bootstrap forms (jQuery)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>
+	<link rel="stylesheet" href="{% static 'css/demo.css' %}">
+
+  
+</head>
+
+<body>
+
+  
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-5 d-flex align-items-center">
+       <h1>Seach Patient Database Made Easy</h1>
+    </div>
+    <div class="col-md-6 offset-md-1">
+      <form class="mt-4 mt-md-0">
+        <div class="form-group">
+          <label for="name">Chart id</label>
+          <input class="form-control" type="text"/>
+        </div>
+        <div class="form-group">
+          <label for="surname">Name</label>
+          <input class="form-control" type="text"/>
+        </div>
+        <div class="form-group">
+          <label for="email">Age</label>
+          <input class="form-control" type="email"/>
+        </div>
+         <div class="form-group">
+          <label for="surname">Phone</label>
+          <input class="form-control" type="text"/>
+        </div>
+         <div class="form-group">
+          <label for="surname">Address</label>
+          <input class="form-control" type="text"/>
+        </div>
+         <div class="form-group">
+          <label for="surname">Memo</label>
+          <input class="form-control" type="text"/>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js'></script>
+
+  
+
+  <script type="text/javascript" src="{% static 'js/demo.js' %}" async></script>
+
+
+
+
+</body>
+
+</html>
