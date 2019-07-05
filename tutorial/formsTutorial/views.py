@@ -89,10 +89,12 @@ def patients(request):
 			except  Patient.DoesNotExist: 
 				msg = 'patient does not exist. Please try again'
 				
-		else: #action == create
+		elif action == 'create': 
 			if form.is_valid():
 				form.save(commit= True)
 				return HttpResponseRedirect('/thanks/')
+		elif action == 'clear': 
+			form = PatientForm()
 
 
 	else:

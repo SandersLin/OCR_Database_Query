@@ -29,7 +29,7 @@
     <div class="col-md-6 offset-md-1">
 
 
-<form action="/patients/" method="post" novalidate="true" class="mt-4 mt-md-0">
+<form action="/" method="post" novalidate="true" class="mt-4 mt-md-0">
     <p class="errorlist">
         {{msg}}
     </p>
@@ -47,7 +47,7 @@
         {% endfor %}
     <button type="submit"  name='action' value="search"  class="btn btn-success"><i class="fa fa-binoculars" aria-hidden="true"></i>  Search</button>
     <button type="submit" name='action' value="create" class="btn btn-outline-success"><i class="fa fa-download" aria-hidden="true"></i>  New Patient</button>
- 
+    <button type="submit" name='action' value="clear" class="btn btn-primary"><i class="fa fa-times" aria-hidden="true"></i> Clear</button>
 
 
      
